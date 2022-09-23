@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>NHS Python Community Website</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/all.atom.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2022-09-01T12:00:00+00:00</updated><entry><title>Process Mining in Python</title><link href="http://localhost:8000/blog/process-mining-python" rel="alternate"></link><published>2022-09-01T12:00:00+00:00</published><updated>2022-09-01T12:00:00+00:00</updated><author><name>Craig Robert Shenton, PhD</name></author><id>tag:localhost,2022-09-01:/blog/process-mining-python</id><summary type="html">&lt;p&gt;Process Mining in Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;The NHS Python Community team met up with Qian Huang - Chief Impact Officer &amp;amp; Co-Founder @ &lt;a href="https://www.logantod.net/"&gt;Logan Tod &amp;amp; Co.&lt;/a&gt; [&lt;a href="https://www.logantod.net/resources/accelerate-nhs-recovery-with-process-mining"&gt;1&lt;/a&gt;] at the &lt;a href="https://nhs-pycom.net/nhs-confed-expo"&gt;Confed Expo in Liverpool&lt;/a&gt; earlier this year to discuss the use of 'process mining' in the NHS.&lt;/p&gt;
+&lt;h2&gt;What is Process Mining&lt;/h2&gt;
+&lt;p&gt;Process mining is a technique to analyse and monitor processes. A 'process' can be thought of as a collection of discrete activities or events. The end goal of process mining is to provide actionable operational insights and ultimately help optimise the whole process [&lt;a href="https://towardsdatascience.com/introduction-to-process-mining-5f4ce985b7e5"&gt;2&lt;/a&gt;]. This can involve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Identifying hidden nodes and bottlenecks in business processes&lt;/li&gt;
+&lt;li&gt;Checking the conformance [&lt;a href=""&gt;3&lt;/a&gt;] of a process to a reference model&lt;/li&gt;
+&lt;li&gt;Making predictions about the future state of the process [&lt;a href="https://towardsdatascience.com/introduction-to-process-mining-5f4ce985b7e5"&gt;2&lt;/a&gt;].
+The method a well proven analytical technique and has seen widespread adoption in industry [&lt;a href="https://www.logantod.net/resources/accelerate-nhs-recovery-with-process-mining"&gt;1&lt;/a&gt;].&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;[&lt;a href=""&gt;3&lt;/a&gt;]&lt;/strong&gt; "&lt;em&gt;Conformance&lt;/em&gt;" is a metric that measures a whether process that falls within an acceptable limit.&lt;/p&gt;
+&lt;h3&gt;Process Mining in a Healthcare Setting&lt;/h3&gt;
+&lt;p&gt;In a healthcare setting, process mining can be used to analyse patient pathways. For example, in elective care, patients start a pathway with a referral, moving them between different appointments and procedures, before completing their journey with a discharge [&lt;a href="https://www.logantod.net/resources/accelerate-nhs-recovery-with-process-mining"&gt;1&lt;/a&gt;]. &lt;/p&gt;
+&lt;figure class="nhsuk-image" style="width: 100%;"&gt;
+  &lt;img class="nhsuk-image__img" src="../images/posts/proc-mining.png" alt="Example patient flow visualisation"&gt;
+    &lt;figcaption class="nhsuk-image__caption" style="text-align: center;"&gt;
+        Figure 1. Example patient flow visualisation
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Figure 1. shows a visualisation of an example patient pathway developed using process mining. Qian and her team have found that once everybody can see the reality of the patient journey it is much easier to collaborate, identify appropriate actions, and deliver real improvement [&lt;a href="https://www.logantod.net/resources/accelerate-nhs-recovery-with-process-mining"&gt;1&lt;/a&gt;].&lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+    &lt;a class="nhsuk-action-link__link" href="https://nhs-analystx.github.io/process-mining/"&gt;
+        &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+            &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+            &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;span class="nhsuk-action-link__text"&gt;Find out more at the AnalystX Process Mining Centre of Excellence&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Process Mining in Python&lt;/h2&gt;
+&lt;p&gt;PM4Py styles it self as the state-of-the-art open-source process mining platform written in Python [&lt;a href="https://pm4py.fit.fraunhofer.de/"&gt;4&lt;/a&gt;]. Developed by the &lt;a href="http://fit.fraunhofer.de/"&gt;Fraunhofer Institute for Applied Information Technology (FIT)&lt;/a&gt;. The advantage of PM4Py being a python library is that it allows for easy integration of process mining with other machine learning algorithms in scikit-learn.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pm4py.fit.fraunhofer.de/install"&gt;Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pm4py.fit.fraunhofer.de/docs"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gitlab.com/healthcare2/process-mining-tutorial/-/tree/master"&gt;Jupyter Notebook tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class="nhsuk-image" style="background-color:transparent; border-bottom:0"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/i6NGHvZyHXY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+    &lt;figcaption class="nhsuk-image__caption"&gt;
+       Video 1. Process Mining in Python | PyData Eindhoven 2019
+    &lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;figure class="nhsuk-image" style="background-color:transparent; border-bottom:0"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XLHtvt36g6U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;figcaption class="nhsuk-image__caption"&gt;
+       Video 2. pm4py tutorials - What is Process Mining
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3&gt;Other Python PM Resources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/TheWoops/awesome-processmining"&gt;Awesome Process Mining with Python Awesome&lt;/a&gt; [&lt;a href="https://github.com/TheWoops/awesome-processmining"&gt;5&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Process Mining with Python tutorial: A Healthcare Application by 'c3d3'[&lt;a href="https://medium.com/@c3_62722/process-mining-with-python-tutorial-a-healthcare-application-part-1-ae02027a050"&gt;6&lt;/a&gt;];&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@c3_62722/process-mining-with-python-tutorial-a-healthcare-application-part-1-ae02027a050"&gt;Part 1&lt;/a&gt;: Introduction, preprocessing and data exploration.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@c3_62722/process-mining-with-python-tutorial-a-healthcare-application-part-2-4cf57053421f"&gt;Part 2&lt;/a&gt;: Process discovery using the PM4Py library.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@c3_62722/process-mining-with-python-tutorial-a-healthcare-application-part-3-cc9af986c122"&gt;Part 3&lt;/a&gt;: Other process discovery algorithms and model representations.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@c3_62722/process-mining-with-python-tutorial-a-healthcare-application-part-4-912286ee51b"&gt;Part 4&lt;/a&gt;: Control flow, bottlenecks, wait times, capacity, and case attributes. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Qian Huang. 2021. "Using Process Mining to accelerate elective recovery in the NHS." [Online] Available at: &lt;a href="https://www.logantod.net/resources/accelerate-nhs-recovery-with-process-mining"&gt;https://www.logantod.net/resources/accelerate-nhs-recovery-with-process-mining&lt;/a&gt;. Logan Todd &amp;amp; Co.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Awesome Process Mining. 2019. [Online] Available at: &lt;a href="https://github.com/TheWoops/awesome-processmining"&gt;https://github.com/TheWoops/awesome-processmining&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Eryk Lewinson. 2020. "Introduction to Process Mining" [Online] Available at: &lt;a href="https://towardsdatascience.com/introduction-to-process-mining-5f4ce985b7e5"&gt;https://towardsdatascience.com/introduction-to-process-mining-5f4ce985b7e5&lt;/a&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;c3d3. 2020. "Process Mining with Python tutorial: A healthcare application — Part 1." [Online] Available at: &lt;a href="https://medium.com/@c3_62722/process-mining-with-python-tutorial-a-healthcare-application-part-1-ae02027a050"&gt;https://medium.com/@c3_62722/process-mining-with-python-tutorial-a-healthcare-application-part-1-ae02027a050&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://fit.fraunhofer.de/"&gt;Fraunhofer Institute for Applied Information Technology (FIT)&lt;/a&gt;. 2022. "PM4PY: State-of-the-art-process mining in Python". Application. [Online] Available at: &lt;a href="https://pm4py.fit.fraunhofer.de/"&gt;https://pm4py.fit.fraunhofer.de/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="python"></category><category term="process mining"></category><category term="NHS"></category></entry><entry><title>Python Poetry</title><link href="http://localhost:8000/blog/python-poetry" rel="alternate"></link><published>2022-06-30T12:00:00+00:00</published><updated>2022-06-30T12:00:00+00:00</updated><author><name>Mary Amanuel</name></author><id>tag:localhost,2022-06-30:/blog/python-poetry</id><summary type="html">&lt;p&gt;The creative link between Python and Poetry.&lt;/p&gt;</summary><content type="html">&lt;h4&gt;The creative link between Python and Poetry&lt;/h4&gt;
+&lt;p&gt;Read as writer and poet &lt;a href="https://www.linkedin.com/in/tokoni-olobio-633a0875/"&gt;Tokoni Olobio&lt;/a&gt; explores the connection between coding and poetry in his poem, &lt;a href="https://olobiotokoni.medium.com/write-or-die-fc8a081508b1"&gt;Write or die&lt;/a&gt; [&lt;em&gt;Medium&lt;/em&gt;].&lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+    &lt;a class="nhsuk-action-link__link" href="https://olobiotokoni.medium.com/write-or-die-fc8a081508b1"&gt;
+        &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+            &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+            &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;span class="nhsuk-action-link__text"&gt;Read the poem "Write or die"&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="nhsuk-card"&gt;
+    &lt;img alt="code" class="nhsuk-card__img" src="https://miro.medium.com/max/1400/1*oINHs75Ju4oL6W9HsnxdIQ.jpeg" /&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="python"></category><category term="poetry"></category></entry><entry><title>NHS Python Community at the ConfedExpo</title><link href="http://localhost:8000/blog/nhs-confed-expo" rel="alternate"></link><published>2022-06-12T12:00:00+00:00</published><updated>2022-06-12T12:00:00+00:00</updated><author><name>NHS Python Community</name></author><id>tag:localhost,2022-06-12:/blog/nhs-confed-expo</id><summary type="html">&lt;p&gt;Promoting the use of open-source software in NHS.&lt;/p&gt;</summary><content type="html">&lt;div class="nhsuk-grid-row"&gt;
+    &lt;div class="nhsuk-grid-column-one-third"&gt;
+        &lt;div class="nhsuk-card"&gt;
+            &lt;img alt="NHS ConfedExpo" class="nhsuk-card__img" src="../images/posts/confed-expo.png" /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="nhsuk-grid-column-two-thirds"&gt;
+        &lt;p&gt;Come and meet us at the &lt;a href="https://nhsconfedexpo.org"&gt;NHS ConfedExpo&lt;/a&gt; this week. We are presenting live from 2.30pm 15 June &amp; 12pm 16 June 2022 at the AnalystX stand (F5: Digital and Data Transformation), Liverpool ACC.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Promoting open-source in the NHS&lt;/h2&gt;
+&lt;p&gt;Open source is the practice of publishing code of a software project so that anyone can read, modify, re-use, and improve that software. &lt;/p&gt;
+&lt;p&gt;Developers across the NHS frequently use existing open source packages and modules in their work, as &lt;a href="https://www.nhs.uk/nhs-app/nhs-app-legal-and-cookies/nhs-app-open-source-licences/"&gt;part of the NHS App&lt;/a&gt;, for example. &lt;/p&gt;
+&lt;p&gt;The last eight years has seen a ‘cambrian explosion’ in the use of open-source software. From the first repository published by NHS England in 2014, to over 1,200 today.&lt;/p&gt;
+&lt;iframe width="900" height="500"
+  src="../static/openhealth-stats-plotly"
+&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Python, R, and web development tools (HTML, css, Ruby, PHP) are the most popular languages used. Source: &lt;a href="https://nhs-pycom.github.io/opensource-health-statistics/"&gt;Open-Source Health Statistics&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Why should we open-source our code?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Public services are built with public money, and so the code they are based on should be made available across the health and care system, and those working with it, to reuse and build on” 
+&lt;a href="https://service-manual.nhs.uk/standards-and-technology/service-standard-points/12-make-new-source-code-open"&gt;NHS Digital Service Manual&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Open source means that the NHS can give our work back to the people who fund it, the public: allowing them to more easily join our staff, more quickly develop products and SMEs to support us, and better understand and trust the work we do on their behalf &lt;a href="https://github.com/nhsx/open-source-policy"&gt;NHS Open-source Policy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Transformation Directorate of NHS England (NHSX) has published &lt;a href="https://github.com/nhsx/open-source-policy"&gt;draft guidance on how to open source your code&lt;/a&gt; for health and care organisations with guidance on where to put the code, how to license and what licences to use, how to maintain and case studies of teams who have done this. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The NHS open-source policy will become officially available in Summer 2022&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Get Involved in the Communtiy!&lt;/h2&gt;
+&lt;p&gt;The NHS Python Community for Healthcare is open to anyone interested in championing the use of Python, programming, and open code in the NHS and healthcare sector&lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+    &lt;a class="nhsuk-action-link__link" href="https://forms.office.com/r/PM3hn17JMc"&gt;
+        &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+            &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+            &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;span class="nhsuk-action-link__text"&gt;Leave us your contact details.&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Open your phone camera to get our details&lt;/h3&gt;
+&lt;div class="nhsuk-card"&gt;
+    &lt;img alt="link" class="nhsuk-card__img" src="../images/posts/scan-me.png" /&gt;
+&lt;/div&gt;
+
+&lt;ul class="nhsuk-grid-row nhsuk-card-group"&gt;
+    &lt;li class="nhsuk-grid-column-one-half nhsuk-card-group__item"&gt;
+        &lt;div class="nhsuk-card nhsuk-card--clickable"&gt;
+            &lt;img class="nhsuk-card__img" src="../images/links/min/slack-min.png" alt="NHS Python Community Slack"&gt;
+            &lt;div class="nhsuk-card__content"&gt;
+                &lt;h2 class="nhsuk-card__heading nhsuk-heading-m"&gt;
+                    &lt;a class="nhsuk-card__link" href="https://join.slack.com/t/nhs-pycom/shared_invite/zt-z6h1hszo-3_w68FdalVM2EATVVdgCuw"&gt; Slack channel&lt;/a&gt;
+                &lt;/h2&gt;
+                &lt;p&gt;Join us on Slack to chat to the community or ask us your questions.&lt;/p&gt;
+                &lt;!--&lt;a class="nhsuk-button" href="https://join.slack.com/t/nhs-pycom/shared_invite/zt-z6h1hszo-3_w68FdalVM2EATVVdgCuw" draggable="false"&gt;
+              Join
+            &lt;/a&gt;--&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="nhsuk-grid-column-one-half nhsuk-card-group__item"&gt;
+        &lt;div class="nhsuk-card nhsuk-card--clickable"&gt;
+            &lt;img class="nhsuk-card__img" src="../images/links/min/linkedin-min.png" alt="NHS Python Community LinkedIn"&gt;
+            &lt;div class="nhsuk-card__content"&gt;
+                &lt;h2 class="nhsuk-card__heading nhsuk-heading-m"&gt;
+                    &lt;a class="nhsuk-card__link" href="https://www.linkedin.com/company/nhs-python-community/posts/"&gt; LinkedIn page&lt;/a&gt;
+                &lt;/h2&gt;
+                &lt;p&gt;Follow our LinkedIn page to be notified about all our future events.&lt;/p&gt;
+                &lt;!--&lt;a class="nhsuk-button" href="https://www.linkedin.com/company/nhs-python-community/posts/" draggable="false"&gt;
+                Follow
+            &lt;/a&gt;--&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="nhsuk-grid-row nhsuk-card-group"&gt;
+    &lt;li class="nhsuk-grid-column-one-half nhsuk-card-group__item"&gt;
+        &lt;div class="nhsuk-card nhsuk-card--clickable"&gt;
+            &lt;img class="nhsuk-card__img" src="../images/links/min/youtube-min.png" alt="NHS Python Community Youtube"&gt;
+            &lt;div class="nhsuk-card__content"&gt;
+                &lt;h2 class="nhsuk-card__heading nhsuk-heading-m"&gt;
+                    &lt;a class="nhsuk-card__link" href="https://www.youtube.com/channel/UC_jacmsGNZQR5BPP7h0EtXw/videos"&gt; YouTube channel&lt;/a&gt;
+                &lt;/h2&gt;
+                &lt;p&gt;Don't forget to like and subscribe to our YouTube channel.&lt;/p&gt;
+                &lt;!--&lt;a class="nhsuk-button" href="https://www.youtube.com/channel/UC_jacmsGNZQR5BPP7h0EtXw/videos" draggable="false"&gt;
+                Subscribe
+            &lt;/a&gt;--&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="nhsuk-grid-column-one-half nhsuk-card-group__item"&gt;
+        &lt;div class="nhsuk-card nhsuk-card--clickable"&gt;
+            &lt;img class="nhsuk-card__img" src="../images/links/min/github-min.png" alt="NHS Python Community GitHub"&gt;
+            &lt;div class="nhsuk-card__content"&gt;
+                &lt;h2 class="nhsuk-card__heading nhsuk-heading-m"&gt;
+                    &lt;a class="nhsuk-card__link" href="https://github.com/nhs-pycom"&gt; GitHub repository&lt;/a&gt;
+                &lt;/h2&gt;
+                &lt;p&gt;Fork our repositories on GitHub and use our code.&lt;/p&gt;
+                &lt;!--&lt;a class="nhsuk-button" href="https://github.com/nhs-pycom" draggable="false"&gt;
+                Fork
+            &lt;/a&gt;--&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="open-source"></category><category term="GitHub"></category><category term="python"></category></entry><entry><title>Just a minute! pre-commit</title><link href="http://localhost:8000/blog/just-a-minute-pre-commit" rel="alternate"></link><published>2022-05-15T15:31:19+00:00</published><updated>2022-05-15T15:31:19+00:00</updated><author><name>Lizi Johnstone</name></author><id>tag:localhost,2022-05-15:/blog/just-a-minute-pre-commit</id><summary type="html">&lt;p&gt;Pre-commit is a package which works like spell-correct on your code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you haven't heard of &lt;a href="https://github.com/pre-commit/pre-commit"&gt;pre-commit&lt;/a&gt; and are using &lt;a href="https://git-scm.com/"&gt;git&lt;/a&gt;, please read.&lt;/p&gt;
+&lt;p&gt;Pre-commit is a &lt;a href="https://pypi.org/project/pip/"&gt;pip package&lt;/a&gt; which works like spell-correct on your code. Once you have it set up, whenever you try and do a git commit, it comes along and says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"Woah there, you have a mistake here! Fix it first and I'll let you pass."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="Gandalf: You shall not pass!" src="../images/posts/shall-not-pass-min.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;It even fixes some things for you; all you have to do is re-add the file and re-commit.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git add new_file.py
+Git commit -m &lt;span class="s2"&gt;&amp;quot;helpful comment&amp;quot;&lt;/span&gt;
+
+&amp;gt;&amp;gt;&amp;gt; Pre-commit - Failed 
+
+Git add new_file.py
+Git commit -m &lt;span class="s2"&gt;&amp;quot;helpful comment&amp;quot;&lt;/span&gt;
+
+&amp;gt;&amp;gt;&amp;gt; Pre-commit - Passed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Pre-commit checks:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pypi.org/project/black/"&gt;&lt;strong&gt;black&lt;/strong&gt;&lt;/a&gt; and &lt;a href="https://pypi.org/project/flake8/"&gt;&lt;strong&gt;Flake8&lt;/strong&gt;&lt;/a&gt; - these are like an English teacher telling you when you have a comma in the wrong place *&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mypy.readthedocs.io/en/stable/"&gt;&lt;strong&gt;Mypy&lt;/strong&gt;&lt;/a&gt; - lets you know if you imported a package and then never used it. Also makes sure your Typing is properly adhered to*.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pycqa.github.io/isort/"&gt;&lt;strong&gt;Isort&lt;/strong&gt;&lt;/a&gt; - puts your imports in alphabetical order&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;jupyter-nb-clear-output&lt;/strong&gt; - checks if you remembered to delete your outputs before committing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;*Mypy and flake8 failures don't fix themselves, but it will tell you the line that needs fixing and why&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Why I love and hate pre-commit:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;It finds all my errors before my colleagues do a code review, and means I have one less thing to think about.&lt;/li&gt;
+&lt;li&gt;I rarely get a pass first time and fixing my typing is a pain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; To use, you need to "pip install" it onto your server, and then "pre-commit install" the first time you're in a new your git repository [&lt;a href="https://pre-commit.com/#install"&gt;link&lt;/a&gt;].&lt;/p&gt;</content><category term="blog"></category><category term="git"></category><category term="python"></category></entry><entry><title>NHS Python Community YouTube channel</title><link href="http://localhost:8000/blog/nhs-python-community-youTube" rel="alternate"></link><published>2022-04-06T00:00:00+00:00</published><updated>2022-04-06T00:00:00+00:00</updated><author><name>NHS Python Community</name></author><id>tag:localhost,2022-04-06:/blog/nhs-python-community-youTube</id><summary type="html">&lt;p&gt;Let’s jump right into it! The NHS Python Community now has its own YouTube channel.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Let’s jump right into it! The NHS Python Community now has its own YouTube channel:&lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+  &lt;a class="nhsuk-action-link__link" href="https://www.youtube.com/channel/UC_jacmsGNZQR5BPP7h0EtXw/videos"&gt;
+    &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+      &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+      &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;span class="nhsuk-action-link__text"&gt;Subscribe now to the NHS Python Community channel&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;All our recent talks have been uploaded in curated playlists including our latest NHS-Pycom X NHS-R collaboration.&lt;/p&gt;
+&lt;p&gt;Don’t forget to like and subscribe for more great pycom content!&lt;/p&gt;
+&lt;h2&gt;NHS Python Community Show &amp;amp; Tell content&lt;/h2&gt;
+&lt;h3&gt;&lt;a href="https://www.youtube.com/playlist?list=PLSLQ7uyfNIIue4bQ5CvnigXRKudJN59rP"&gt;Python in the Clinic: April 14 2022&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Open-source applications such as Python will be key drivers to delivering the robust data and analytics we need in health and care. In the clinic, the utilisation of Python-based frameworks and tools have the potential to improve patient outcomes and reduce the burden of frontline healthcare workers.&lt;/p&gt;
+&lt;h4&gt;Regional radiology quality improvement in Devon and Cornwall using open source tools: progress and challenges.&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/N8e5saR75g0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dr Mark Thurston&lt;/strong&gt;. Consultant Radiologist, University Hospitals Plymouth NHS Trust&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Data is becoming increasingly important in informing decisions to improve clinical outcomes. Free open-source tools widely used across many industries are underutilised within the NHS, resulting in an opportunity cost. We present the implementation of our cross-site radiology safety netting in the southwest using the following open-source technologies: &lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;PostgreSQL&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;Pandas&lt;/code&gt;, &lt;code&gt;Matplotlib&lt;/code&gt;. We discuss some of the challenges encountered so far.&lt;/p&gt;
+&lt;h4&gt;Spiritum Duo - Clinical pathways, A to B but faster!&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5Fc-v3EE2Ws" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dr Mark Bailey&lt;/strong&gt;. Speciality doctor in Respiratory Medicine and Clinical Informatician&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nick Ives&lt;/strong&gt;. Computer science placement student, Gloucestershire University&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Joe Channing&lt;/strong&gt;. Computer science placement student, Gloucestershire University&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are working on a proof-of-concept app using digitisation, automation and optimisation of a lung cancer pathway through the development of a full-stack web application. The approach to potential digital and automation solutions in the clinic will be discussed alongside the important role two computer science students played in the development of the tool during their placements in a secondary care trust. As the work is both modular and open-source other disease sites and trusts can collaborate and benefit from this work. We are building this app so that it can be used by anyone that would be interested to use it IRL at their trust. We are using Typescript (&lt;code&gt;react&lt;/code&gt; and apollo &lt;code&gt;GragphQL&lt;/code&gt;) in the front end and python (&lt;code&gt;Starlette&lt;/code&gt; and &lt;code&gt;Ariadne&lt;/code&gt;) backend. A single page application utilising progressive web app technologies.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://www.youtube.com/playlist?list=PLSLQ7uyfNIItsPh0Ss1LXePNmuK9-LFvj"&gt;NHS.Pycom X NHS-R: Feb 23 2022&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The NHS Python Community for Healthcare (NHS.pycom) and the NHS-R Community hosted a joint event on the 23rd February 2022, focusing on reproducible open-source analytics in both Python and R.&lt;/p&gt;
+&lt;h4&gt;Reproducible Analytical Pipelines (RAP)&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WRXagzGTILQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;Helen Richardson&lt;/strong&gt;. Data Scientist, NHS Digital.&lt;/p&gt;
+&lt;p&gt;Overview of the application of Python based reproducible analytical pipelines at NHS Digital.&lt;/p&gt;
+&lt;h4&gt;RAP Community of Practice&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SWMaAr29SyI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;Kenneth Quan&lt;/strong&gt;. Data Scientist, NHS Digital.&lt;/p&gt;
+&lt;p&gt;The community of practice NHS Digital has built around RAP which includes a walkthrough of the RAP community of practice GitHub repository.&lt;/p&gt;
+&lt;h4&gt;Development of tools for querying, tidying, and analysing data in R&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KPtNteFL4Xg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;Milan Wiedemann&lt;/strong&gt;. Data Scientist &amp;amp; Researcher, The DataLab Oxford University.&lt;/p&gt;
+&lt;p&gt;Presentation on the ideas behind a set of tools developed at Nottinghamshire Healthcare NHS Trust that changed the way the team worked with healthcare data. The tools allow for the automation of common data manipulations and analytical tasks in a modular way to facilitate a more collaborative and reproducible way of working within a team.&lt;/p&gt;
+&lt;h4&gt;Drivers of crowding in type 1 Emergency Departments: econometric model and its implementation in R.&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Nh5bd_gxb9k" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;Edmund Haacke&lt;/strong&gt;. Economic Analyst, Economics &amp;amp; Strategic Analysis team, NHS England.&lt;/p&gt;
+&lt;p&gt;Crowding of patients in emergency departments has been associated with worse patient experience, increased mortality as well as higher staff turnover. In this project, we developed novel metrics and examined how a large set of factors are associated with crowding in emergency departments in England using data from the Emergency Care Data Set. &lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://www.youtube.com/playlist?list=PLSLQ7uyfNIIt1H4bcWBIBQdiGvC5gJp9X"&gt;The Potential for Python in the NHS: Nov 16 2021&lt;/a&gt;&lt;/h3&gt;
+&lt;h4&gt;Python Pyrate Leading Innovation in Search of 'Bountiful Insights'&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NyKj_3zr2JY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;John O’Connell&lt;/strong&gt;, Director of Strategic and Service Innovation, NHS SCW CSU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Python Pyrate on the Front Line&lt;/h4&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hx_4VweTQYs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dr Mark Bailey&lt;/strong&gt;, Speciality Doctor in Respiratory Medicine, Gloucestershire Royal Hospital&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Present your own open-source technology to the NHS Python Communtiy&lt;/h2&gt;
+&lt;p&gt;We are always looking for future speakers at our Show &amp;amp; Tells. Please use the following link to register to present your open source technology work.&lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+  &lt;a class="nhsuk-action-link__link" href="https://forms.office.com/r/SkTwm2TWy9"&gt;
+    &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+      &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+      &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;span class="nhsuk-action-link__text"&gt;Register your Interest&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Notes:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You are free to present the information as you wish. Tt could be a lessons learned piece, project/technique walkthroughs, a personal case study of your story working on an open-source technology project. Just think about what is most valuable for the community members to take away from your project.&lt;/li&gt;
+&lt;li&gt;You can be any band or grade to present, we care more about the quality of work rather than the job title of who produced it.
+There is no set structure to the talks, and either a PowerPoint, code or both can be shown. However, if code will be shown we ask that a short PowerPoint highlighting the overall goal of the project, the techniques used, and its result and application be included at the start of the talk.&lt;/li&gt;
+&lt;li&gt;I am excited to learn more about the amazing work involving open-source technologies throughout the system! Feel free to message me directly on slack, or email me at &lt;a href="mailto:mattia.ficarelli@nhsx.nhs.uk"&gt;mattia.ficarelli@nhsx.nhs.uk&lt;/a&gt;,  if you have any further questions.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="YouTube"></category><category term="python"></category></entry><entry><title>Developing Python Programming Skills Within the NHS</title><link href="http://localhost:8000/blog/cambridge-spark-apprenticeship" rel="alternate"></link><published>2022-04-01T00:00:00+00:00</published><updated>2022-04-01T00:00:00+00:00</updated><author><name>NHS Python Community</name></author><id>tag:localhost,2022-04-01:/blog/cambridge-spark-apprenticeship</id><summary type="html">&lt;p&gt;Data and AI Apprenticeships with Cambridge-Spark.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Read the Cambridge Spark data analyst apprentice case study from Imperial College Healthcare NHS Trust and with Imperial College London&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.cambridgespark.com/case-studies/developing-python-programming-skills-within-the-nhs"&gt;Case study: Developing Python Programming Skills Within the NHS&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Interested in joining the next Apprenticeship programme?&lt;/h3&gt;
+&lt;p&gt;Cambridge Spark is delivering Data and AI apprenticeships that provide the NHS workforce with the skills needed to reshape health and social care with data. Working with a range of partners including the NHS Leadership Academy, Microsoft, AnalystX and HDR UK, every NHS employee has an opportunity to develop the data and digital skills they need to succeed. &lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+  &lt;a class="nhsuk-action-link__link" href="https://bit.ly/3tYRkyJ"&gt;
+    &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+      &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+      &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;span class="nhsuk-action-link__text"&gt;Learn more about Data and AI Apprenticeships for the NHS&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="Cambridge-Spark"></category><category term="Apprenticeship"></category><category term="python"></category></entry><entry><title>Hutsons Hacks Python Resources</title><link href="http://localhost:8000/blog/hutsons-hacks-resources" rel="alternate"></link><published>2022-04-01T00:00:00+00:00</published><updated>2022-04-01T00:00:00+00:00</updated><author><name>NHS Python Community</name></author><id>tag:localhost,2022-04-01:/blog/hutsons-hacks-resources</id><summary type="html">&lt;p&gt;Hacks, tips &amp;amp; tricks in R, Python and beyond...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Check out the PyHacks tutorial repository to get up to speed quickly on learning Python.&lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+  &lt;a class="nhsuk-action-link__link" href="https://github.com/StatsGary/PyHacks-Tutorials"&gt;
+    &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+      &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+      &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;span class="nhsuk-action-link__text"&gt;PyHacks tutorials get you from beginner to winner!&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;These tutorials are developed by &lt;a href="https://hutsons-hacks.info/"&gt;Gary Hutson&lt;/a&gt;. Head of Machine Learning at &lt;a href="https://www.crispthinking.com/"&gt;CRISP&lt;/a&gt;, a Tensorflow Certified Developer, and NHS-R Community Senior Fellow. Formarly Head of Advanced Analytics at Arden &amp;amp; Gem CSU.&lt;/p&gt;
+&lt;h3&gt;Python Basics, Programming and OOP&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/01_Lists.py"&gt;Lists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/02_Tuples.py"&gt;Tuples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/03_Dictionaries.py"&gt;Dictionaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/04_Sets.py"&gt;Sets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/05_ConditionalLogic.py"&gt;Conditional Logic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/06_Looping.py"&gt;Going Loopy - All Things While and For Loop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/07_Functions.py"&gt;Functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/08_Lambda_Anon_Funcs.py"&gt;Lambda Functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/09_Classes_with_Python.py"&gt;Classes and Class Methods&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/10_Classes_with_Python_Getters_Setters.py"&gt;Classes with getters and setters&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/tree/main/11_Inheritance_and_OverloadingMethods"&gt;Inheritance and Transformers Classes&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/12_Iterators.py"&gt;Creating your own Iterators&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/13_FunctionScope.py"&gt;Function Scope - Local vs Global&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/14_Dates.py"&gt;Working with Dates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/15_JSON.py"&gt;Parsing JSON&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/16_Math.py"&gt;Mathematics aka the Math Library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/17_Regular_Expressions.py"&gt;Regex - Regular Expressions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/18_ErrorHandling.py"&gt;Error Handling - try.except.finally&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/19_UserInput_and_StringFormatting.py"&gt;User Input and Replacement String Formatting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/20_File_IO_Read_and_Write_data.py"&gt;File Input and Output&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Pandas - DataFrames and Series&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/21_Pandas/21_1_GettingStarted.py"&gt;Pandas - Getting started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/21_Pandas/21_2_Series.py."&gt;Working with Pandas Series&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/21_Pandas/21_3_DataFrames.py"&gt;DataFrames - indexing and creation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/21_Pandas/21_4_DataFrames_Cleaning_Data.py"&gt;DataFrames - Cleaning Data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Data Visualisation - Matplotlib&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/22_Matplotlib/22_1_Matplot_Intro.py"&gt;Intro to Matplotlib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/22_Matplotlib/22_2_Matplot_LineCharts.py"&gt;Line Chart Creation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/22_Matplotlib/22_3_Matplot_Labelling_and_grids.py"&gt;Labelling and grid lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/22_Matplotlib/22_4_Matplot_Subplotting.py"&gt;Creating subplots&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StatsGary/PyHacks-Tutorials/blob/main/22_Matplotlib/22_5_Matplot_Scatter.py"&gt;Scatter Chart creation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The repository was created to enable people to learn from Gary's pain of learning Python himself 4 years ago. The code also acts as a support to the hutsons-hacks YouTube channel.&lt;/p&gt;
+&lt;h3&gt;Python (PyHacks) Tutorial playlist:&lt;/h3&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/q6teY2nwJKM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://www.youtube.com/playlist?list=PLSLQ7uyfNIIvBABMWgj61u7wNlQnbWqKw"&gt;Python (PyHacks) Tutorial playlist&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Check out more content on hutsons-hacks:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://hutsons-hacks.info/category/python-blogs"&gt;Blog - Python blogs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PL37zlCA8GQdrHqgrDg2WcsSY6-P0ZBgnS"&gt;YouTube - Python playlist&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://hutsons-hacks.info/category/r-blogs"&gt;Blog - R blogs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PL37zlCA8GQdo-mObS7U6ViJduy9CyC5aI"&gt;YouTube - R playlist&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="python"></category><category term="R"></category><category term="learn"></category></entry><entry><title>NHS Python Community recognised in the Goldacre Review</title><link href="http://localhost:8000/blog/goldenacre-review" rel="alternate"></link><published>2022-03-07T00:00:00+00:00</published><updated>2022-03-07T00:00:00+00:00</updated><author><name>NHS Python Community</name></author><id>tag:localhost,2022-03-07:/blog/goldenacre-review</id><summary type="html">&lt;p&gt;Better, broader, safer. A practical vision for using health data for research and analysis.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The review led by Professor Ben Goldacre into how the efficient and safe use of health data for research and analysis can benefit patients and the healthcare sector has now been published. &lt;/p&gt;
+&lt;h4&gt;The NHS Python Community recognised&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NHS analysts community has an array of grass roots organisations including the NHS-R community, the NHS-python community, and the Association of Professional Health Analysts. These organisations do an excellent job of championing the work of NHS analysts, and providing them with opportunities to exchange ideas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;About the Goldacre Review&lt;/h2&gt;
+&lt;p&gt;The review was commissioned by the Secretary of State for Health and Care, and will be responded to in the forthcoming Data Strategy for Health and Social Care which sets the direction for the use of data in a post-pandemic healthcare system.&lt;/p&gt;
+&lt;p&gt;The NHS has some of the most powerful health data in the world. Almost every interaction with the health service leaves a digital trace: the diagnoses, treatments, tests and outcomes for almost every citizen in the country. &lt;/p&gt;
+&lt;p&gt;But raw data is not powerful on its own. It must be shaped, checked, and curated into shape. It must be housed, and managed securely. It must be analysed. And then it must be communicated, and acted upon. That work all requires people, with modern data skills, in teams, using platforms that protect patients’ privacy and avoid needless duplication of effort.&lt;/p&gt;
+&lt;p&gt;The Goldacre review sets out a practical vision of how we can collectively achieve this goal.&lt;/p&gt;
+&lt;div class="nhsuk-action-link"&gt;
+  &lt;a class="nhsuk-action-link__link" href="https://www.gov.uk/government/publications/better-broader-safer-using-health-data-for-research-and-analysis/better-broader-safer-using-health-data-for-research-and-analysis"&gt;
+    &lt;svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"&gt;
+      &lt;path d="M0 0h24v24H0z" fill="none"&gt;&lt;/path&gt;
+      &lt;path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;span class="nhsuk-action-link__text"&gt;Read the Goldacre Review&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Useful Links&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://nhsrcommunity.com/"&gt;NHS-R community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nhs-pycom.net/"&gt;NHS-python community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.aphanalysts.org/"&gt;Association of Professional Health Analysts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="analytics"></category><category term="python"></category><category term="NHS-R"></category></entry><entry><title>NHS-R podcast - The NHS Python Community</title><link href="http://localhost:8000/blog/nhsr-podcast" rel="alternate"></link><published>2022-02-01T00:00:00+00:00</published><updated>2022-02-01T00:00:00+00:00</updated><author><name>NHS Python Community</name></author><id>tag:localhost,2022-02-01:/blog/nhsr-podcast</id><summary type="html">&lt;p&gt;Listen to the NHS Python Community team on the NHS-R podcast!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Stay awhile and listen! To our very own NHS Python Community team on the NHS-R podcast hosted by Chris Beeley.&lt;/p&gt;
+&lt;iframe width="100%" height="166" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1217478010&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://soundcloud.com/nhs-r-community" title="NHS-R Community"&gt;NHS-R Community&lt;/a&gt;: &lt;a href="https://soundcloud.com/nhs-r-community/pycom" title="NHS-R podcast episode 7- NHS Pycom"&gt;NHS-R podcast episode 7- NHS Python Community&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Staring:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="github.com/maryamanuelnhsx"&gt;Mary Amanuel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="github.com/Cotswoldsmaker"&gt;Dr Mark Bailey&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="tgithub.com/sophie-w/"&gt;Sophie Williams, PhD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="github.com/Adenrele"&gt;Adenrele Komolafe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="NHS-R"></category><category term="python"></category></entry><entry><title>England Prescribing Data (EPD) analysis using python</title><link href="http://localhost:8000/blog/epd-analysis-using-python" rel="alternate"></link><published>2021-06-21T00:00:00+00:00</published><updated>2021-06-21T00:00:00+00:00</updated><author><name>Adenrele Komolafe</name></author><id>tag:localhost,2021-06-21:/blog/epd-analysis-using-python</id><summary type="html">&lt;p&gt;Exploration of seasonal allergic rhinitis (hayfever) prescribing data using python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Whilst sneezing and coughing on a relatively cool evening, I decided to explore seasonal allergic rhinitis (hayfever) prescribing data. The far off aim is to build a model using pollen count data and the prescribing data. In this ongoing process, I have faced multiple challenges.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"The English prescribing dataset contains detailed information on prescriptions issued in England that have been dispensed in England, Wales, Scotland, Guernsey, Alderney, Jersey, and the Isle of Man.” — NHSBSA&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;&lt;a href="https://towardsdatascience.com/nhs-english-prescribing-data-analysis-using-python-9d86ec610880"&gt;NHS English Prescribing Data (EPD) Analysis Using Python (1)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In the first posts of a two-part series, I describe the methods used to exctract data from the CKAN API using &lt;code&gt;requests&lt;/code&gt; and &lt;code&gt;pandas&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://towardsdatascience.com/nhs-english-prescibing-data-epd-analysis-using-python-part-2-aa990e4e47dd"&gt;NHS English Prescribing Data (EPD) Analysis Using Python (2)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In the second posts of this two-part series, I aim to increase time efficiency of my data exctact, to explore the data, and to connect to a remote server in preparation for computationally expensive tasks.&lt;/p&gt;</content><category term="blog"></category><category term="open-source"></category><category term="analytics"></category><category term="python"></category></entry><entry><title>Open Analytics Template</title><link href="http://localhost:8000/blog/open-analytics-template" rel="alternate"></link><published>2021-06-11T12:00:00+00:00</published><updated>2021-06-11T12:00:00+00:00</updated><author><name>Craig Robert Shenton, PhD</name></author><id>tag:localhost,2021-06-11:/blog/open-analytics-template</id><summary type="html">&lt;p&gt;How we built an open analytics template for healthcare.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The open analytics template is a very lightweight and reusable automation pipeline for open analytics projects. The tech stack is built using an end-to-end open-source tooling, consisting four key components:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://docs.github.com/en/rest/reference/orgs"&gt;GitHub API&lt;/a&gt; / &lt;a href=""&gt;GitLab API&lt;/a&gt;: We use the open API to pull data from open health repositoiries as &lt;code&gt;.json&lt;/code&gt; files that are flattened into &lt;code&gt;pandas&lt;/code&gt; dataframes for analysis.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://plotly.com/graphing-libraries/"&gt;Plotly.py&lt;/a&gt;: An open source python graphing library is used to plot the repository data as tables and interactive charts.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;: Used to orchestrate and automate the first two components on a schedule and commit those changes back to the project's repository.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pages.github.com/"&gt;GitHub.io Pages&lt;/a&gt;: We host and publish the results of our analysis to a static website that is re-built on every new commit.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="https://github.com/nhsx/open-analytics-template"&gt;
+    &lt;img class="nhsuk-image__img" style='border:1px solid #212b32' src="../images/posts/open-analytics-min.png" alt="Open-Source Health Statistics"&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The template is used to build and deploy the following projects:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href="https://nhs-pycom.github.io/opensource-health-statistics/"&gt;Open-Source Health Statistics&lt;/a&gt; project was created by developers at &lt;a href="https://www.nhsx.nhs.uk/"&gt;NHSX&lt;/a&gt; and &lt;a href="https://www.nhsbsa.nhs.uk/"&gt;NHS Business Services Authority&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href="https://docs.github.com/en/rest/reference/orgs"&gt;Github&lt;/a&gt; / &lt;a href=""&gt;GitLab API&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;An API (Application Program Interface) allows us to access web tools or data in the cloud. The Github / GitLab API's are designed so that we can create and manage our repositories, branches, issues, pull requests programmatically. Typically you would need to sign into your own account to access these features, but some information is publicly available. In this project we are using the API to access publicly available information on open source repositories published by NHS and health related organisations.&lt;/p&gt;
+&lt;p&gt;We use the &lt;code&gt;urllib.request&lt;/code&gt; python library to access the API as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="s2"&gt;&amp;quot;https://api.github.com/orgs/&amp;quot;&lt;/span&gt;  &lt;span class="c1"&gt;# github REST call&lt;/span&gt;
+        &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;org_id&lt;/span&gt;                        &lt;span class="c1"&gt;# organisation github name&lt;/span&gt;
+        &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/repos?page=&amp;quot;&lt;/span&gt;                &lt;span class="c1"&gt;# list of open repos&lt;/span&gt;
+        &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;                     &lt;span class="c1"&gt;# page count&lt;/span&gt;
+        &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;amp;per_page=100&amp;quot;&lt;/span&gt;               &lt;span class="c1"&gt;# no of results per page&lt;/span&gt;
+      &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note: you can only make 60 calls per hour to the publich GitHub API, so we need to bear this in mind when looping through the API calls.&lt;/p&gt;
+&lt;p&gt;The outputs of the API call returns a &lt;code&gt;.json&lt;/code&gt; file from which we can flatten to a &lt;code&gt;panads&lt;/code&gt; dataframe.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;flat_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;json_normalize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We can then do some basic calculations to summerise these data. For example, count the number of repositores by each organisation.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;aggregate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;org&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reset_index&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;&lt;a href="https://plotly.com/python/"&gt;Plotly&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Plotly is a &lt;a href="https://plotly.com/python/is-plotly-free/"&gt;free and open source&lt;/a&gt; graphing library that that supports over 40 interactive, publication-quality graphs. It is available in Python, R, and JavaScript although the rendering process uses the Plotly.js JavaScript library under the hood.&lt;/p&gt;
+&lt;p&gt;We use Plotly to save the graph to standalone HTML files.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# example plotly chart syntax&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;plotly.graph_objects&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;go&lt;/span&gt;
+&lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;D&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;E&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;F&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Figure&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;33&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;])])&lt;/span&gt;
+&lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# write out to file (.html)&lt;/span&gt;
+&lt;span class="n"&gt;plotly_example&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;plotly&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;offline&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;include_plotlyjs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;output_type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;div&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;_includes/plotly_example.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;w&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;plotly_example&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Example Ploty Graph&lt;/h3&gt;
+&lt;iframe width="800" height="600"
+  src="../static/plotly_example"
+&gt;&lt;/iframe&gt;
+
+&lt;h2&gt;&lt;a href="https://github.com/features/actions"&gt;Github Actions&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;GitHub Actions are a way to automate workflows using a simple &lt;a href="https://learnxinyminutes.com/docs/yaml/"&gt;YAML syntax&lt;/a&gt;. It's free on public repositories.&lt;/p&gt;
+&lt;p&gt;You must store workflow files in the &lt;code&gt;.github/workflows&lt;/code&gt; directory of your repository.&lt;/p&gt;
+&lt;h3&gt;Required&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;name:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The name of your workflow. GitHub displays the names of your workflows on your repository's actions page.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;on: [push, pull_request]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Required. The name of the GitHub event that triggers the workflow. For a list of available events, see &lt;a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows"&gt;Events that trigger workflows&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can schedule a workflow to run at specific UTC times using POSIX cron syntax. Scheduled workflows run on the latest commit on the default or base branch.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;schedule&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;runs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;UTC&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;everyday&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cron&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;0 0 * * *&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This example triggers the workflow every day at 00:00 UTC:&lt;/p&gt;
+&lt;h3&gt;Jobs&lt;/h3&gt;
+&lt;p&gt;A workflow run is made up of one or more jobs. Each job runs in a fresh instance of a virtual environment specified by &lt;code&gt;runs-on&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Virtual environment&lt;/th&gt;
+&lt;th&gt;YAML workflow label&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2019&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;windows-latest&lt;/code&gt; or &lt;code&gt;windows-2019&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2016&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;windows-2016&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ubuntu 20.04&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ubuntu-latest&lt;/code&gt; or &lt;code&gt;ubuntu-20.04&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ubuntu 18.04&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ubuntu-18.04&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;macOS Big Sur 11&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;macos-11&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;macOS Catalina 10.15&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;macos-latest&lt;/code&gt; or &lt;code&gt;macos-10.15&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Steps&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/actions/checkout"&gt;Checkout&lt;/a&gt;: This action checks-out your repository so the workflow can access it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;checkout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;repo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;actions&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;checkout&lt;/span&gt;&lt;span class="nv"&gt;@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/actions/setup-python"&gt;Setup python&lt;/a&gt;: This action sets up a Python environment for use in actions by installing and adding to PATH an available version of Python in this case python 3.8&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;actions&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="nv"&gt;@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;3.8&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/py-actions/py-dependency-install"&gt;Install dependancies&lt;/a&gt;: This GitHub Action installs Python package dependencies from a user-defined &lt;code&gt;requirements.txt&lt;/code&gt; file path with &lt;code&gt;pip&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;dependencies&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;actions&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dependency&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="nv"&gt;@v2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;path&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;requirements.txt&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this case plotly, pandas, and pyYaml&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# requirements.txt&lt;/span&gt;
+&lt;span class="nv"&gt;plotly&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;.14.3
+&lt;span class="nv"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.1.3
+&lt;span class="nv"&gt;pyyaml&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.4.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Runs command-line programs using the operating system's shell. run the run.py to get the latest data&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;- name: execute py script
+run: |
+    python run.py
+        dir
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Commit changes to files&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Commit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;commit&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;action@github.com&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;github-actions&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="ow"&gt;all&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;-z &amp;quot;$(git status --porcelain)&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;::set-output name=push::false&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;commit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Add changes&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;::set-output name=push::true&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;fi&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;shell&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Push changes to repo so github pages will re-build website&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;- name: Push changes&lt;/span&gt;
+&lt;span class="x"&gt;if: steps.commit.outputs.push == &amp;#39;true&amp;#39;&lt;/span&gt;
+&lt;span class="x"&gt;uses: ad-m/github-push-action@master&lt;/span&gt;
+&lt;span class="x"&gt;with:&lt;/span&gt;
+&lt;span class="x"&gt;    github_token: &lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;secrets.GITHUB_TOKEN&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;GitHub Pages&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"&gt;GitHub Pages&lt;/a&gt; is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.&lt;/p&gt;
+&lt;p&gt;You can use a static site generator to build your site for you or publish any static files that you push to your repository as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;On GitHub, navigate to your site's repository, example: &lt;a href="https://nhs-pycom.github.io/opensource-health-statistics/"&gt;https://nhs-pycom.github.io/opensource-health-statistics/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In the root of the repository, create a new file called &lt;code&gt;index.md&lt;/code&gt; that contains the content for your site.&lt;/li&gt;
+&lt;li&gt;Under your repository name, select &lt;code&gt;Settings&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;In the left sidebar, select &lt;code&gt;Pages&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Select the branch from which to publish your page and select &lt;code&gt;save&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Your page will be deployed within 60 seconds&lt;/li&gt;
+&lt;li&gt;To see your published site, under &lt;code&gt;GitHub Pages&lt;/code&gt;, select your site's URL.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For the &lt;a href="https://nhs-pycom.github.io/opensource-health-statistics/"&gt;Open Health Statistics&lt;/a&gt; page we are using a static version of the &lt;a href="https://service-manual.nhs.uk/"&gt;NHS Digital Service Manual&lt;/a&gt; that meets the &lt;a href="https://www.gov.uk/service-manual/service-standard"&gt;GOV.UK service standard&lt;/a&gt;.&lt;/p&gt;</content><category term="blog"></category><category term="open-source"></category><category term="GitHub"></category><category term="analytics"></category><category term="python"></category></entry><entry><title>Open-Source Health Statistics</title><link href="http://localhost:8000/blog/open-source-health-statistics" rel="alternate"></link><published>2021-06-11T12:00:00+00:00</published><updated>2021-06-11T12:00:00+00:00</updated><author><name>Craig Robert Shenton, PhD</name></author><id>tag:localhost,2021-06-11:/blog/open-source-health-statistics</id><summary type="html">&lt;p&gt;We are collecting statistics on open-source NHS and healthcare related code repositories.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have been collecting stats on open repositories of NHS and related healthcare organisations. We use the open &lt;a href="https://docs.github.com/en/rest/reference/orgs"&gt;GitHub API&lt;/a&gt; to pull data from open (public) repositoiries as &lt;code&gt;.json&lt;/code&gt; files, then flatten the data into &lt;code&gt;pandas&lt;/code&gt; dataframes for analysis. This has produced an interesting dataset that has lots of potential for further analysis and visualisations. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nhs-pycom.github.io/opensource-health-statistics/"&gt;
+    &lt;img class="nhsuk-image__img" style='border:1px solid #212b32' src="../images/posts/open-source-stats-min.png" alt="Open Analytics Template"&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Use of open-source software in the NHS&lt;/h2&gt;
+&lt;p&gt;Open source is the practice of publishing the source code of a software project so that anyone can read, modify, re-use, and improve that software. For more on precise terms, see the Open Knowledge Foundation’s &lt;a href="http://opendefinition.org/od/2.1/en/"&gt;Open Definition&lt;/a&gt;. Programmers across the NHS frequently use existing open source packages and modules in their work, especially for routine data &lt;a href="https://pandas.pydata.org/"&gt;analysis&lt;/a&gt; or &lt;a href="https://hadoop.apache.org/"&gt;processing&lt;/a&gt;, or for mobile development (as &lt;a href="https://www.nhs.uk/nhs-app/nhs-app-legal-and-cookies/nhs-app-open-source-licences/"&gt;part of the NHS App&lt;/a&gt;, for instance). &lt;/p&gt;
+&lt;p&gt;The ‘cambrian explosion’ visualisation captures the rise in open-source software in recent years. From the first open-source repo published by NHS England in 2014, to over 1,200 today. Python, R, and webdev tools (HTML, css, Ruby, PHP) are the most popular languages.&lt;/p&gt;
+&lt;iframe width="900" height="550"
+  src="../static/openhealth-stats-plotly"
+&gt;&lt;/iframe&gt;
+
+&lt;h2&gt;Why whould we open-source our code?&lt;/h2&gt;
+&lt;p&gt;As set out in the &lt;a href="https://service-manual.nhs.uk/standards-and-technology/service-standard-points/12-make-new-source-code-open"&gt;NHS Digital Service Manual&lt;/a&gt;, public services are built with public money–so unless there’s a good reason not to (security for example), all code produced by the NHS should be made publicly available. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Open source means that the NHS can give our work back to the people who fund it, the public: allowing them to more easily join our staff, more quickly develop products and SMEs to support us, and better understand and trust the work we do on their behalf. 
+&lt;a href="https://github.com/nhsx/open-source-policy"&gt;NHS Open-source Policy&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To this end, the &lt;a href="https://www.gov.uk/government/publications/data-saves-lives-reshaping-health-and-social-care-with-data-draft/data-saves-lives-reshaping-health-and-social-care-with-data-draft"&gt;Department of Health &amp;amp; Social Care&lt;/a&gt; has made a commitment to make all new NHS code open source and published under &lt;a href="https://opensource.org/licenses"&gt;open licences&lt;/a&gt; such as &lt;a href="https://opensource.org/licenses/MIT"&gt;MIT&lt;/a&gt; and &lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"&gt;OGLv3&lt;/a&gt;, which define the legal terms for free access and reuse.&lt;/p&gt;
+&lt;p&gt;The Transformation Directorate of NHS England (NHSX) has aslo published &lt;a href="https://github.com/nhsx/open-source-policy"&gt;draft guidance on how to open source your code&lt;/a&gt; for health and care organisations with guidance on where to put the code, how to license and what licences to use, how to maintain and case studies of teams who have done this. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The NHS Open Source Policy will become officially available in Summer 2022&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Contributions&lt;/h2&gt;
+&lt;p&gt;The &lt;a href="https://nhs-pycom.github.io/opensource-health-statistics/"&gt;Open-Source Health Statistics&lt;/a&gt; project was created by developers at: &lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://www.nhsx.nhs.uk/"&gt;NHSX&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/craig-shenton"&gt;Craig Robert Shenton, PhD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/mattia-ficarelli"&gt;Mattia Ficarelli, PhD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/maryamanuelnhsx"&gt;Mary Amanuel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Arouba"&gt;Arouba Zubair&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href="https://www.nhsbsa.nhs.uk/"&gt;NHS Business Services Authority&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/admivsn"&gt;Adam Ivison&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="open-source"></category><category term="GitHub"></category><category term="analytics"></category><category term="python"></category></entry><entry><title>Markdown in Action</title><link href="http://localhost:8000/blog/see-markdown-in-action" rel="alternate"></link><published>2014-06-10T12:31:19+00:00</published><updated>2014-06-10T12:31:19+00:00</updated><author><name>NHS Python Community</name></author><id>tag:localhost,2014-06-10:/blog/see-markdown-in-action</id><summary type="html">&lt;p&gt;See what the different elements looks like. Your markdown has never looked better. I promise.&lt;/p&gt;</summary><content type="html">&lt;p&gt;There is a significant amount of subtle, yet precisely calibrated, styling to ensure
+that your content is emphasized while still looking aesthetically pleasing.&lt;/p&gt;
+&lt;p&gt;All links are easy to &lt;a href="#"&gt;locate and discern&lt;/a&gt;, yet don't detract from the &lt;a href="#"&gt;harmony
+of a paragraph&lt;/a&gt;. The &lt;em&gt;same&lt;/em&gt; goes for italics and &lt;strong&gt;bold&lt;/strong&gt; elements. Even the the strikeout
+works if &lt;del&gt;for some reason you need to update your post&lt;/del&gt;. For consistency's sake,
+&lt;ins&gt;The same goes for insertions&lt;/ins&gt;, of course.&lt;/p&gt;
+&lt;h3&gt;Code, with syntax highlighting&lt;/h3&gt;
+&lt;p&gt;Here's an example of some ruby code with line anchors.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# The most awesome of classes&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Awesome&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
+  &lt;span class="kp"&gt;include&lt;/span&gt; &lt;span class="no"&gt;EvenMoreAwesome&lt;/span&gt;
+
+  &lt;span class="n"&gt;validates_presence_of&lt;/span&gt; &lt;span class="ss"&gt;:something&lt;/span&gt;
+  &lt;span class="n"&gt;validates&lt;/span&gt; &lt;span class="ss"&gt;:email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;email_format&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kp"&gt;true&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;initialize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;email&lt;/span&gt;
+    &lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;name&lt;/span&gt;
+    &lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;favorite_number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;
+    &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;created awesomeness&amp;#39;&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;email_format&lt;/span&gt;
+    &lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;/\S+@\S+\.\S+/&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here's some CSS:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;foobar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c"&gt;/* Named colors rule */&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;tomato&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here's some JavaScript:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;isPresent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;is-present&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nx"&gt;module&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;exports&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;doStuff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;things&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;isPresent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;things&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;doOtherStuff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;things&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here's some HTML:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;m0 p0 bg-blue white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h3&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Hello, world!&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h3&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Headings!&lt;/h1&gt;
+&lt;p&gt;They're responsive, and well-proportioned (in &lt;code&gt;padding&lt;/code&gt;, &lt;code&gt;line-height&lt;/code&gt;, &lt;code&gt;margin&lt;/code&gt;, and &lt;code&gt;font-size&lt;/code&gt;).
+They also heavily rely on the awesome utility, &lt;a href="http://basscss.com"&gt;BASSCSS&lt;/a&gt;.&lt;/p&gt;
+&lt;h5&gt;They draw the perfect amount of attention&lt;/h5&gt;
+&lt;p&gt;This allows your content to have the proper informational and contextual hierarchy. Yay.&lt;/p&gt;
+&lt;h3&gt;There are lists, too&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Apples&lt;/li&gt;
+&lt;li&gt;Oranges&lt;/li&gt;
+&lt;li&gt;Potatoes&lt;/li&gt;
+&lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Mow the lawn&lt;/li&gt;
+&lt;li&gt;Feed the dog&lt;/li&gt;
+&lt;li&gt;Dance&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Images look great, too&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="desk" src="https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png"&gt;&lt;/p&gt;
+&lt;h3&gt;There are also pretty colors&lt;/h3&gt;
+&lt;p&gt;Also the result of &lt;a href="http://basscss.com"&gt;BASSCSS&lt;/a&gt;, you can &lt;span class="bg-dark-gray white"&gt;highlight&lt;/span&gt; certain components
+of a &lt;span class="red"&gt;post&lt;/span&gt; &lt;span class="mid-gray"&gt;with&lt;/span&gt; &lt;span class="green"&gt;CSS&lt;/span&gt; &lt;span class="orange"&gt;classes&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;I don't recommend using blue, though. It looks like a &lt;span class="blue"&gt;link&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Footnotes!&lt;/h3&gt;
+&lt;p&gt;Markdown footnotes are supported, and they look great! Simply put e.g. &lt;code&gt;[^1]&lt;/code&gt; where you want the footnote to appear,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; and then add
+the reference at the end of your markdown.&lt;/p&gt;
+&lt;h3&gt;Stylish blockquotes included&lt;/h3&gt;
+&lt;p&gt;You can use the markdown quote syntax, &lt;code&gt;&amp;gt;&lt;/code&gt; for simple quotes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis porta mauris.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;However, you need to inject html if you'd like a citation footer. I will be working on a way to
+hopefully sidestep this inconvenience.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+  &lt;/p&gt;
+  &lt;footer&gt;&lt;cite title="Antoine de Saint-Exupéry"&gt;Antoine de Saint-Exupéry&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Tables&lt;/h3&gt;
+&lt;p&gt;Tables represent tabular data and can be built using markdown syntax.  They are rendered responsively in Mixyll for a variety of screen widths.&lt;/p&gt;
+&lt;p&gt;Here's a simple example of a table:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Quantity&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style="text-align: right;"&gt;Price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Orange&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;$0.99&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Pineapple&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;$2.99&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Banana&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;$0.39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;==========&lt;/td&gt;
+&lt;td&gt;=============&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;===========&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;&lt;strong&gt;$6.14&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A table must have a body of one or more rows, but can optionally also have a header or footer.&lt;/p&gt;
+&lt;p&gt;The cells in a column, including the header row cell, can either be aligned:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;left,&lt;/li&gt;
+&lt;li&gt;right or&lt;/li&gt;
+&lt;li&gt;center.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Most inline text formatting is available in table cells, block-level formatting are not.&lt;/p&gt;
+&lt;p&gt;|----------------|----------------------|------------------------|----------------------------------|
+| Default header | Left header          |     Center header      |                     Right header |
+|----------------|:---------------------|:----------------------:|---------------------------------:|
+| Default        | Left                 |        Center          |                            Right |
+| &lt;em&gt;Italic&lt;/em&gt;       | &lt;strong&gt;Bold&lt;/strong&gt;             |   &lt;strong&gt;&lt;em&gt;Bold italic&lt;/em&gt;&lt;/strong&gt;    |                      &lt;code&gt;monospace&lt;/code&gt; |
+| &lt;a href="#"&gt;link text&lt;/a&gt; | &lt;code&gt;code&lt;/code&gt;           |     ~~Strikeout~~      |              &lt;ins&gt;Insertion&lt;ins&gt; |
+| line&lt;br/&gt;break | "Smart quotes"       | &lt;mark&gt;highlight&lt;/mark&gt; | &lt;span class="green"&gt;green&lt;/span&gt; |
+| Footnote&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;   | &lt;sub&gt;subscript&lt;/sub&gt; | &lt;sup&gt;superscript&lt;/sup&gt; |     &lt;span class="red"&gt;red&lt;/span&gt; |
+|================|======================|========================|==================================|
+| Footer row                                                                                        |
+|----------------|----------------------|-----------------------------------------------------------|&lt;/p&gt;
+&lt;h3&gt;There's more being added all the time&lt;/h3&gt;
+&lt;p&gt;Checkout the &lt;a href="https://github.com/saikiransripada/mixyll"&gt;Github repository&lt;/a&gt; to request,
+or add, features.&lt;/p&gt;
+&lt;p&gt;Happy writing.&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;Important information that may distract from the main text can go in footnotes.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;Footnotes will work in tables since they're just links.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="blog"></category><category term="markdown"></category></entry></feed>
