@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+  <title>NHS Python Community Website - Just a minute! pre-commit</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="robots" content="all">
+  <meta name="author" content="AUTHOR">
+  <link rel="stylesheet" href="/theme/css/main.css" />
+  <script src="/theme/js/nhsuk.js" defer></script>
+
+  <!-- Fonts -->
+  <link type="font/woff2" href="/theme/fonts/FrutigerLTW01-55Roman.woff2" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="/theme/fonts/FrutigerLTW01-65Bold.woff2" rel="preload" as="font" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css    ">
+
+  <!-- Open Graph -->
+  <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Blog">
+  <meta property="og:description"
+    content="The NHS Python community is an open community of practice, driven by enthusiasts and advocates, championing the use of python programming language and open code in the NHS and healthcare sector.">
+  <meta property="og:url" content="https://nhs-pycom.net/blog">
+  <meta property="og:site_name" content="NHS Python Community Website">
+  <meta property="og:image" content="/theme/social-media-splash.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog" />
+  <meta name="twitter:description"
+    content="The NHS Python community is an open community of practice, driven by enthusiasts and advocates, championing the use of python programming language and open code in the NHS and healthcare sector." />
+  <meta name="twitter:url" content="https://nhs-pycom.net//blog" />
+  <meta name="twitter:image" content="https://nhs-pycom.net/image/social-media-splash.png" />
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/theme/favicons/favicon.ico">
+  <link rel="shortcut icon" href="/theme/favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/theme/favicons/apple-touch-icon-180x180.png">
+  <link rel="mask-icon" href="/theme/favicons/favicon.svg" color="#005eb8 ">
+  <link rel="icon" sizes="192x192" href="/theme/favicons/favicon-192x192.png">
+  <meta name="msapplication-TileImage" content="/theme/mediumtile-144x144.png">
+  <meta name="msapplication-TileColor" content="#005eb8">
+  <meta name="msapplication-square70x70logo " content="/theme/favicons/smalltile-70x70.png">
+  <meta name="msapplication-square150x150logo " content="/theme/favicons/mediumtile-150x150.png">
+  <meta name="msapplication-wide310x150logo " content="/theme/favicons/favicons/widetile-310x150.png">
+  <meta name="msapplication-square310x310logo " content="/theme/favicons/favicons/largetile-310x310.png">
+
+
+
+
+    <meta name="tags" content="git" />
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+  <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+  <header class="nhsuk-header" role="banner">
+    <div class="nhsuk-width-container nhsuk-header__container">
+        <div class="nhsuk-header__logo">
+            <a class="nhsuk-header__link nhsuk-header__link--service " href="/" aria-label="Homepage">
+                <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16">
+                <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+                <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+              </svg>
+        <span class="nhsuk-header__service-name">
+          Python Community for Healthcare
+        </span>
+            </a>
+        </div>
+
+        <div class="nhsuk-header__content" id="content-header">
+            <div class="nhsuk-header__menu">
+                <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </div>
+    <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
+      <div class="nhsuk-width-container">
+          <p class="nhsuk-header__navigation-title"><span id="label-navigation">Menu</span>
+            <button class="nhsuk-header__navigation-close" id="close-menu">
+              <svg class="nhsuk-icon nhsuk-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+              </svg>
+              <span class="nhsuk-u-visually-hidden">Close menu</span>
+            </button>
+          </p>
+          <ul class="nhsuk-header__navigation-list">
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="/">
+                    Home
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="/blog">
+                    Blog
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="/get-involved">
+                    Get Involved
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="/resources">
+                    Resources
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="/community">
+                    Community
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="/code_of_conduct">
+                    Code of Conduct
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="/contact">
+                    Contact
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent">
+    <section id="content" class="body">
+      <header>
+        <h1 class="entry-title">Just a minute! pre-commit</h1>
+        
+      </header>
+      <footer class="post-info">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <p>
+              <time class="published" datetime="2022-05-15T15:31:19+00:00">
+                Sun 15 May 2022
+              </time>
+              <address class="vcard author">
+                By                     <a class="url fn" href="/author/lizi-johnstone.html">Lizi Johnstone</a>
+              </address>
+              <p class="author-bio">Data Scientist, Economics & Strategic Analysis, NHS England</p>
+              <p class="author-link">Github: 
+                  <a href="https://github.com/LiziJohnstone">https://github.com/LiziJohnstone</a>
+              </p>
+              <p class="tags">
+              Tags:
+                    <a href="/tag/git.html">git</a>
+                    <a href="/tag/python.html">python</a>
+              </p>
+          </div>
+        </div>
+      </footer><!-- /.post-info -->
+      <div class="entry-content">
+        <p>If you haven't heard of <a href="https://github.com/pre-commit/pre-commit">pre-commit</a> and are using <a href="https://git-scm.com/">git</a>, please read.</p>
+<p>Pre-commit is a <a href="https://pypi.org/project/pip/">pip package</a> which works like spell-correct on your code. Once you have it set up, whenever you try and do a git commit, it comes along and says:</p>
+<blockquote>
+<p>"Woah there, you have a mistake here! Fix it first and I'll let you pass."</p>
+</blockquote>
+<p><img alt="Gandalf: You shall not pass!" src="../images/posts/shall-not-pass-min.jpg"></p>
+<p>It even fixes some things for you; all you have to do is re-add the file and re-commit.</p>
+<div class="highlight"><pre><span></span><code>git add new_file.py
+Git commit -m <span class="s2">&quot;helpful comment&quot;</span>
+
+&gt;&gt;&gt; Pre-commit - Failed 
+
+Git add new_file.py
+Git commit -m <span class="s2">&quot;helpful comment&quot;</span>
+
+&gt;&gt;&gt; Pre-commit - Passed
+</code></pre></div>
+
+<h3>Pre-commit checks:</h3>
+<ul>
+<li><a href="https://pypi.org/project/black/"><strong>black</strong></a> and <a href="https://pypi.org/project/flake8/"><strong>Flake8</strong></a> - these are like an English teacher telling you when you have a comma in the wrong place *</li>
+<li><a href="https://mypy.readthedocs.io/en/stable/"><strong>Mypy</strong></a> - lets you know if you imported a package and then never used it. Also makes sure your Typing is properly adhered to*.</li>
+<li><a href="https://pycqa.github.io/isort/"><strong>Isort</strong></a> - puts your imports in alphabetical order</li>
+<li><strong>jupyter-nb-clear-output</strong> - checks if you remembered to delete your outputs before committing.</li>
+</ul>
+<p><em>*Mypy and flake8 failures don't fix themselves, but it will tell you the line that needs fixing and why</em></p>
+<h3>Why I love and hate pre-commit:</h3>
+<ul>
+<li>It finds all my errors before my colleagues do a code review, and means I have one less thing to think about.</li>
+<li>I rarely get a pass first time and fixing my typing is a pain.</li>
+</ul>
+<p><strong>Note:</strong> To use, you need to "pip install" it onto your server, and then "pre-commit install" the first time you're in a new your git repository [<a href="https://pre-commit.com/#install">link</a>].</p>
+      </div><!-- /.entry-content -->
+    </section>
+  </main>
+</div>
+  <footer role="contentinfo">
+    <div class="nhsuk-footer" id="nhsuk-footer">
+        <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">Developed by <a class="nhsuk-footer__list-item-link" href="https://github.com/nhs-pycom">NHS-pycom</a></li>
+                <li class="nhsuk-footer__list-item">View the Project on <a class="nhsuk-footer__list-item-link" href="https://github.com/nhs-pycom/nhs.pycom">GitHub</a></li>
+            </ul>
+            <p class="nhsuk-footer__copyright">&copy; MIT Licence</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block title %}{{ SITENAME }} - {{ category }} category{% endblock %}
+<div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="maincontent">
+        {% block content_title %}
+        <h2>Articles in the {{ category }} category</h2>
+        {% endblock %}
+    </main>
+</div>
+
