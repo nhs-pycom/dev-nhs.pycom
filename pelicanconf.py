@@ -44,20 +44,20 @@ PAGE_SAVE_AS = '{slug}.html'
 SLUGIFY_SOURCE = 'basename'
 
 # Menuitems
-#MENUITEMS = (('Home', 'https://nhs-pycom.github.io/dev-nhs.pycom/'),
-    # ('Blog', 'https://nhs-pycom.github.io/dev-nhs.pycom/blog'),
-    # ('Get Involved', 'https://nhs-pycom.github.io/dev-nhs.pycom/get-involved'),
-    # ('Resources', 'https://nhs-pycom.github.io/dev-nhs.pycom/resources'),
-    # ('Community', 'https://nhs-pycom.github.io/dev-nhs.pycom/community'),
-    # ('Code of Conduct', 'https://nhs-pycom.github.io/dev-nhs.pycom/code_of_conduct'),
-    # ('Contact', 'https://nhs-pycom.github.io/dev-nhs.pycom/contact'),)
-MENUITEMS = (('Home', '/'),
-    ('Blog', '/blog'),
-    ('Get Involved', '/get-involved'),
-    ('Resources', '/resources'),
-    ('Community', '/community'),
-    ('Code of Conduct', '/code_of_conduct'),
-    ('Contact', '/contact'),)
+MENUITEMS = (('Home', 'https://nhs-pycom.github.io/dev-nhs.pycom/'),
+    ('Blog', 'https://nhs-pycom.github.io/dev-nhs.pycom/blog'),
+    ('Get Involved', 'https://nhs-pycom.github.io/dev-nhs.pycom/get-involved'),
+    ('Resources', 'https://nhs-pycom.github.io/dev-nhs.pycom/resources'),
+    ('Community', 'https://nhs-pycom.github.io/dev-nhs.pycom/community'),
+    ('Code of Conduct', 'https://nhs-pycom.github.io/dev-nhs.pycom/code_of_conduct'),
+    ('Contact', 'https://nhs-pycom.github.io/dev-nhs.pycom/contact'),)
+# MENUITEMS = (('Home', '/'),
+#     ('Blog', '/blog'),
+#     ('Get Involved', '/get-involved'),
+#     ('Resources', '/resources'),
+#     ('Community', '/community'),
+#     ('Code of Conduct', '/code_of_conduct'),
+#     ('Contact', '/contact'),)
 
 DISPLAY_PAGES_ON_MENU = False
 
