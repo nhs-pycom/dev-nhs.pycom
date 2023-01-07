@@ -62,7 +62,7 @@ MENUITEMS = (('Home', 'https://nhs-pycom.github.io/dev-nhs.pycom/'),
 DISPLAY_PAGES_ON_MENU = False
 
 # Specify blog location
-#INDEX_SAVE_AS = 'blog/index.html'
+INDEX_SAVE_AS = 'blog/index.html'
 
 # Static HTML
 STATIC_PATHS = ['static', 'images']
