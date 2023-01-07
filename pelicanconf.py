@@ -1,6 +1,6 @@
 AUTHOR = 'NHS Python Community'
 SITENAME = 'NHS Python Community Website'
-SITEURL = ''
+SITEURL = 'https://nhs-pycom.github.io/dev-nhs.pycom/'
 
 PATH = 'content'
 
