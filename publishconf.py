@@ -7,8 +7,6 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-#SITEURL = 'https://nhs-pycom.net'
-#SITEURL = 'http://localhost:8000'
 SITEURL = 'https://nhs-pycom.github.io/dev-nhs.pycom'
 RELATIVE_URLS = True
 
