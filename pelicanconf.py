@@ -68,4 +68,4 @@ INDEX_SAVE_AS = 'blog/index.html'
 STATIC_PATHS = ['static', 'images']
 
 # Output
-OUTPUT_PATH = 'docs/'
+#OUTPUT_PATH = 'docs/'
