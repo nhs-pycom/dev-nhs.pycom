@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+  <title>NHS Python Community Website - Markdown in Action</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="robots" content="all">
+  <meta name="author" content="AUTHOR">
+  <link rel="stylesheet" href="../theme/css/main.css" />
+  <script src="../theme/js/nhsuk.js" defer></script>
+
+  <!-- Fonts -->
+  <link type="font/woff2" href="../theme/fonts/FrutigerLTW01-55Roman.woff2" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="../theme/fonts/FrutigerLTW01-65Bold.woff2" rel="preload" as="font" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css    ">
+
+  <!-- Open Graph -->
+  <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Blog">
+  <meta property="og:description"
+    content="The NHS Python community is an open community of practice, driven by enthusiasts and advocates, championing the use of python programming language and open code in the NHS and healthcare sector.">
+  <meta property="og:url" content="https://nhs-pycom.net/blog">
+  <meta property="og:site_name" content="NHS Python Community Website">
+  <meta property="og:image" content="../theme/social-media-splash.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog" />
+  <meta name="twitter:description"
+    content="The NHS Python community is an open community of practice, driven by enthusiasts and advocates, championing the use of python programming language and open code in the NHS and healthcare sector." />
+  <meta name="twitter:url" content="https://nhs-pycom.net//blog" />
+  <meta name="twitter:image" content="https://nhs-pycom.net/image/social-media-splash.png" />
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="../theme/favicons/favicon.ico">
+  <link rel="shortcut icon" href="../theme/favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../theme/favicons/apple-touch-icon-180x180.png">
+  <link rel="mask-icon" href="../theme/favicons/favicon.svg" color="#005eb8 ">
+  <link rel="icon" sizes="192x192" href="../theme/favicons/favicon-192x192.png">
+  <meta name="msapplication-TileImage" content="../theme/mediumtile-144x144.png">
+  <meta name="msapplication-TileColor" content="#005eb8">
+  <meta name="msapplication-square70x70logo " content="../theme/favicons/smalltile-70x70.png">
+  <meta name="msapplication-square150x150logo " content="../theme/favicons/mediumtile-150x150.png">
+  <meta name="msapplication-wide310x150logo " content="../theme/favicons/favicons/widetile-310x150.png">
+  <meta name="msapplication-square310x310logo " content="../theme/favicons/favicons/largetile-310x310.png">
+
+
+
+
+    <meta name="tags" content="markdown" />
+
+</head>
+
+<body>
+  <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+  <header class="nhsuk-header" role="banner">
+    <div class="nhsuk-width-container nhsuk-header__container">
+        <div class="nhsuk-header__logo">
+            <a class="nhsuk-header__link nhsuk-header__link--service " href="../" aria-label="Homepage">
+                <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16">
+                <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+                <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+              </svg>
+        <span class="nhsuk-header__service-name">
+          Python Community for Healthcare
+        </span>
+            </a>
+        </div>
+
+        <div class="nhsuk-header__content" id="content-header">
+            <div class="nhsuk-header__menu">
+                <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </div>
+    <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
+      <div class="nhsuk-width-container">
+          <p class="nhsuk-header__navigation-title"><span id="label-navigation">Menu</span>
+            <button class="nhsuk-header__navigation-close" id="close-menu">
+              <svg class="nhsuk-icon nhsuk-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+              </svg>
+              <span class="nhsuk-u-visually-hidden">Close menu</span>
+            </button>
+          </p>
+          <ul class="nhsuk-header__navigation-list">
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/">
+                    Home
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/blog">
+                    Blog
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/get-involved">
+                    Get Involved
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/resources">
+                    Resources
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/community">
+                    Community
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/code_of_conduct">
+                    Code of Conduct
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/contact">
+                    Contact
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent">
+    <section id="content" class="body">
+      <header>
+        <h1 class="entry-title">Markdown in Action</h1>
+        
+      </header>
+      <footer class="post-info">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <p>
+              <time class="published" datetime="2014-06-10T12:31:19+00:00">
+                Tue 10 June 2014
+              </time>
+              <address class="vcard author">
+                By                     <a class="url fn" href="../author/nhs-python-community.html">NHS Python Community</a>
+              </address>
+              <p class="author-link">Github: 
+                  <a href="nhs-pycom">nhs-pycom</a>
+              </p>
+              <p class="tags">
+              Tags:
+                    <a href="../tag/markdown.html">markdown</a>
+              </p>
+          </div>
+        </div>
+      </footer><!-- /.post-info -->
+      <div class="entry-content">
+        <p>There is a significant amount of subtle, yet precisely calibrated, styling to ensure
+that your content is emphasized while still looking aesthetically pleasing.</p>
+<p>All links are easy to <a href="#">locate and discern</a>, yet don't detract from the <a href="#">harmony
+of a paragraph</a>. The <em>same</em> goes for italics and <strong>bold</strong> elements. Even the the strikeout
+works if <del>for some reason you need to update your post</del>. For consistency's sake,
+<ins>The same goes for insertions</ins>, of course.</p>
+<h3>Code, with syntax highlighting</h3>
+<p>Here's an example of some ruby code with line anchors.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># The most awesome of classes</span>
+<span class="k">class</span> <span class="nc">Awesome</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="kp">include</span> <span class="no">EvenMoreAwesome</span>
+
+  <span class="n">validates_presence_of</span> <span class="ss">:something</span>
+  <span class="n">validates</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">email_format</span><span class="p">:</span> <span class="kp">true</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="nb">name</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">name</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">favorite_number</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="nb">puts</span> <span class="s1">&#39;created awesomeness&#39;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">email_format</span>
+    <span class="n">email</span> <span class="o">=~</span> <span class="sr">/\S+@\S+\.\S+/</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>Here's some CSS:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">foobar</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c">/* Named colors rule */</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">tomato</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Here's some JavaScript:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">isPresent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;is-present&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">doStuff</span><span class="p">(</span><span class="nx">things</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isPresent</span><span class="p">(</span><span class="nx">things</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">doOtherStuff</span><span class="p">(</span><span class="nx">things</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Here's some HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m0 p0 bg-blue white&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;h1&quot;</span><span class="p">&gt;</span>Hello, world!<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h1>Headings!</h1>
+<p>They're responsive, and well-proportioned (in <code>padding</code>, <code>line-height</code>, <code>margin</code>, and <code>font-size</code>).
+They also heavily rely on the awesome utility, <a href="http://basscss.com">BASSCSS</a>.</p>
+<h5>They draw the perfect amount of attention</h5>
+<p>This allows your content to have the proper informational and contextual hierarchy. Yay.</p>
+<h3>There are lists, too</h3>
+<ul>
+<li>Apples</li>
+<li>Oranges</li>
+<li>Potatoes</li>
+<li>Milk</li>
+</ul>
+<h3></h3>
+<ol>
+<li>Mow the lawn</li>
+<li>Feed the dog</li>
+<li>Dance</li>
+</ol>
+<h3>Images look great, too</h3>
+<p><img alt="desk" src="https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png"></p>
+<h3>There are also pretty colors</h3>
+<p>Also the result of <a href="http://basscss.com">BASSCSS</a>, you can <span class="bg-dark-gray white">highlight</span> certain components
+of a <span class="red">post</span> <span class="mid-gray">with</span> <span class="green">CSS</span> <span class="orange">classes</span>.</p>
+<p>I don't recommend using blue, though. It looks like a <span class="blue">link</span>.</p>
+<h3>Footnotes!</h3>
+<p>Markdown footnotes are supported, and they look great! Simply put e.g. <code>[^1]</code> where you want the footnote to appear,<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and then add
+the reference at the end of your markdown.</p>
+<h3>Stylish blockquotes included</h3>
+<p>You can use the markdown quote syntax, <code>&gt;</code> for simple quotes.</p>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis porta mauris.</p>
+</blockquote>
+<p>However, you need to inject html if you'd like a citation footer. I will be working on a way to
+hopefully sidestep this inconvenience.</p>
+<blockquote>
+  <p>
+    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+  </p>
+  <footer><cite title="Antoine de Saint-Exupéry">Antoine de Saint-Exupéry</cite></footer>
+</blockquote>
+
+<h3>Tables</h3>
+<p>Tables represent tabular data and can be built using markdown syntax.  They are rendered responsively in Mixyll for a variety of screen widths.</p>
+<p>Here's a simple example of a table:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Description</th>
+<th style="text-align: right;">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Orange</td>
+<td style="text-align: right;">$0.99</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Pineapple</td>
+<td style="text-align: right;">$2.99</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Banana</td>
+<td style="text-align: right;">$0.39</td>
+</tr>
+<tr>
+<td>==========</td>
+<td>=============</td>
+<td style="text-align: right;">===========</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>$6.14</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A table must have a body of one or more rows, but can optionally also have a header or footer.</p>
+<p>The cells in a column, including the header row cell, can either be aligned:</p>
+<ul>
+<li>left,</li>
+<li>right or</li>
+<li>center.</li>
+</ul>
+<p>Most inline text formatting is available in table cells, block-level formatting are not.</p>
+<p>|----------------|----------------------|------------------------|----------------------------------|
+| Default header | Left header          |     Center header      |                     Right header |
+|----------------|:---------------------|:----------------------:|---------------------------------:|
+| Default        | Left                 |        Center          |                            Right |
+| <em>Italic</em>       | <strong>Bold</strong>             |   <strong><em>Bold italic</em></strong>    |                      <code>monospace</code> |
+| <a href="#">link text</a> | <code>code</code>           |     ~~Strikeout~~      |              <ins>Insertion<ins> |
+| line<br/>break | "Smart quotes"       | <mark>highlight</mark> | <span class="green">green</span> |
+| Footnote<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>   | <sub>subscript</sub> | <sup>superscript</sup> |     <span class="red">red</span> |
+|================|======================|========================|==================================|
+| Footer row                                                                                        |
+|----------------|----------------------|-----------------------------------------------------------|</p>
+<h3>There's more being added all the time</h3>
+<p>Checkout the <a href="https://github.com/saikiransripada/mixyll">Github repository</a> to request,
+or add, features.</p>
+<p>Happy writing.</p>
+<hr>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Important information that may distract from the main text can go in footnotes.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Footnotes will work in tables since they're just links.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+      </div><!-- /.entry-content -->
+    </section>
+  </main>
+</div>
+  <footer role="contentinfo">
+    <div class="nhsuk-footer" id="nhsuk-footer">
+        <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">Developed by <a class="nhsuk-footer__list-item-link" href="https://github.com/nhs-pycom">NHS-pycom</a></li>
+                <li class="nhsuk-footer__list-item">View the Project on <a class="nhsuk-footer__list-item-link" href="https://github.com/nhs-pycom/nhs.pycom">GitHub</a></li>
+            </ul>
+            <p class="nhsuk-footer__copyright">&copy; MIT Licence</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

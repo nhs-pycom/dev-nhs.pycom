@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+  <title>NHS Python Community Website - Open Analytics Template</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="robots" content="all">
+  <meta name="author" content="AUTHOR">
+  <link rel="stylesheet" href="../theme/css/main.css" />
+  <script src="../theme/js/nhsuk.js" defer></script>
+
+  <!-- Fonts -->
+  <link type="font/woff2" href="../theme/fonts/FrutigerLTW01-55Roman.woff2" rel="preload" as="font" crossorigin>
+  <link type="font/woff2" href="../theme/fonts/FrutigerLTW01-65Bold.woff2" rel="preload" as="font" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css    ">
+
+  <!-- Open Graph -->
+  <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Blog">
+  <meta property="og:description"
+    content="The NHS Python community is an open community of practice, driven by enthusiasts and advocates, championing the use of python programming language and open code in the NHS and healthcare sector.">
+  <meta property="og:url" content="https://nhs-pycom.net/blog">
+  <meta property="og:site_name" content="NHS Python Community Website">
+  <meta property="og:image" content="../theme/social-media-splash.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog" />
+  <meta name="twitter:description"
+    content="The NHS Python community is an open community of practice, driven by enthusiasts and advocates, championing the use of python programming language and open code in the NHS and healthcare sector." />
+  <meta name="twitter:url" content="https://nhs-pycom.net//blog" />
+  <meta name="twitter:image" content="https://nhs-pycom.net/image/social-media-splash.png" />
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="../theme/favicons/favicon.ico">
+  <link rel="shortcut icon" href="../theme/favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../theme/favicons/apple-touch-icon-180x180.png">
+  <link rel="mask-icon" href="../theme/favicons/favicon.svg" color="#005eb8 ">
+  <link rel="icon" sizes="192x192" href="../theme/favicons/favicon-192x192.png">
+  <meta name="msapplication-TileImage" content="../theme/mediumtile-144x144.png">
+  <meta name="msapplication-TileColor" content="#005eb8">
+  <meta name="msapplication-square70x70logo " content="../theme/favicons/smalltile-70x70.png">
+  <meta name="msapplication-square150x150logo " content="../theme/favicons/mediumtile-150x150.png">
+  <meta name="msapplication-wide310x150logo " content="../theme/favicons/favicons/widetile-310x150.png">
+  <meta name="msapplication-square310x310logo " content="../theme/favicons/favicons/largetile-310x310.png">
+
+
+
+
+    <meta name="tags" content="open-source" />
+    <meta name="tags" content="GitHub" />
+    <meta name="tags" content="analytics" />
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+  <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+  <header class="nhsuk-header" role="banner">
+    <div class="nhsuk-width-container nhsuk-header__container">
+        <div class="nhsuk-header__logo">
+            <a class="nhsuk-header__link nhsuk-header__link--service " href="../" aria-label="Homepage">
+                <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16">
+                <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+                <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+              </svg>
+        <span class="nhsuk-header__service-name">
+          Python Community for Healthcare
+        </span>
+            </a>
+        </div>
+
+        <div class="nhsuk-header__content" id="content-header">
+            <div class="nhsuk-header__menu">
+                <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </div>
+    <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
+      <div class="nhsuk-width-container">
+          <p class="nhsuk-header__navigation-title"><span id="label-navigation">Menu</span>
+            <button class="nhsuk-header__navigation-close" id="close-menu">
+              <svg class="nhsuk-icon nhsuk-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+              </svg>
+              <span class="nhsuk-u-visually-hidden">Close menu</span>
+            </button>
+          </p>
+          <ul class="nhsuk-header__navigation-list">
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/">
+                    Home
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/blog">
+                    Blog
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/get-involved">
+                    Get Involved
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/resources">
+                    Resources
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/community">
+                    Community
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/code_of_conduct">
+                    Code of Conduct
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+              <li class="nhsuk-header__navigation-item">
+                  <a class="nhsuk-header__navigation-link" href="https://nhs-pycom.github.io/dev-nhs.pycom/contact">
+                    Contact
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                </svg>
+                </a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent">
+    <section id="content" class="body">
+      <header>
+        <h1 class="entry-title">Open Analytics Template</h1>
+        
+      </header>
+      <footer class="post-info">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <p>
+              <time class="published" datetime="2021-06-11T12:00:00+00:00">
+                Fri 11 June 2021
+              </time>
+              <address class="vcard author">
+                By                     <a class="url fn" href="../author/craig-robert-shenton-phd.html">Craig Robert Shenton, PhD</a>
+              </address>
+              <p class="author-bio">Senior Data Engineer, NHS England Medical Directorate</p>
+              <p class="author-link">Github: 
+                  <a href="https://github.com/craig-shenton">https://github.com/craig-shenton</a>
+              </p>
+              <p class="tags">
+              Tags:
+                    <a href="../tag/open-source.html">open-source</a>
+                    <a href="../tag/github.html">GitHub</a>
+                    <a href="../tag/analytics.html">analytics</a>
+                    <a href="../tag/python.html">python</a>
+              </p>
+          </div>
+        </div>
+      </footer><!-- /.post-info -->
+      <div class="entry-content">
+        <p>The open analytics template is a very lightweight and reusable automation pipeline for open analytics projects. The tech stack is built using an end-to-end open-source tooling, consisting four key components:</p>
+<ol>
+<li><a href="https://docs.github.com/en/rest/reference/orgs">GitHub API</a> / <a href="">GitLab API</a>: We use the open API to pull data from open health repositoiries as <code>.json</code> files that are flattened into <code>pandas</code> dataframes for analysis.</li>
+<li><a href="https://plotly.com/graphing-libraries/">Plotly.py</a>: An open source python graphing library is used to plot the repository data as tables and interactive charts.</li>
+<li><a href="https://github.com/features/actions">GitHub Actions</a>: Used to orchestrate and automate the first two components on a schedule and commit those changes back to the project's repository.</li>
+<li><a href="https://pages.github.com/">GitHub.io Pages</a>: We host and publish the results of our analysis to a static website that is re-built on every new commit.</li>
+</ol>
+<p><a href="https://github.com/nhsx/open-analytics-template">
+    <img class="nhsuk-image__img" style='border:1px solid #212b32' src="../images/posts/open-analytics-min.png" alt="Open-Source Health Statistics">
+</a></p>
+<p>The template is used to build and deploy the following projects:</p>
+<ul>
+<li>The <a href="https://nhs-pycom.github.io/opensource-health-statistics/">Open-Source Health Statistics</a> project was created by developers at <a href="https://www.nhsx.nhs.uk/">NHSX</a> and <a href="https://www.nhsbsa.nhs.uk/">NHS Business Services Authority</a> </li>
+</ul>
+<h2><a href="https://docs.github.com/en/rest/reference/orgs">Github</a> / <a href="">GitLab API</a></h2>
+<p>An API (Application Program Interface) allows us to access web tools or data in the cloud. The Github / GitLab API's are designed so that we can create and manage our repositories, branches, issues, pull requests programmatically. Typically you would need to sign into your own account to access these features, but some information is publicly available. In this project we are using the API to access publicly available information on open source repositories published by NHS and health related organisations.</p>
+<p>We use the <code>urllib.request</code> python library to access the API as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;https://api.github.com/orgs/&quot;</span>  <span class="c1"># github REST call</span>
+        <span class="o">+</span> <span class="n">org_id</span>                        <span class="c1"># organisation github name</span>
+        <span class="o">+</span> <span class="s2">&quot;/repos?page=&quot;</span>                <span class="c1"># list of open repos</span>
+        <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>                     <span class="c1"># page count</span>
+        <span class="o">+</span> <span class="s2">&quot;&amp;per_page=100&quot;</span>               <span class="c1"># no of results per page</span>
+      <span class="p">)</span>
+</code></pre></div>
+
+<p>Note: you can only make 60 calls per hour to the publich GitHub API, so we need to bear this in mind when looping through the API calls.</p>
+<p>The outputs of the API call returns a <code>.json</code> file from which we can flatten to a <code>panads</code> dataframe.</p>
+<div class="highlight"><pre><span></span><code><span class="n">flat_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+
+<p>We can then do some basic calculations to summerise these data. For example, count the number of repositores by each organisation.</p>
+<div class="highlight"><pre><span></span><code><span class="n">aggregate</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;org&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<h2><a href="https://plotly.com/python/">Plotly</a></h2>
+<p>Plotly is a <a href="https://plotly.com/python/is-plotly-free/">free and open source</a> graphing library that that supports over 40 interactive, publication-quality graphs. It is available in Python, R, and JavaScript although the rendering process uses the Plotly.js JavaScript library under the hood.</p>
+<p>We use Plotly to save the graph to standalone HTML files.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># example plotly chart syntax</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">([</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">])])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># write out to file (.html)</span>
+<span class="n">plotly_example</span> <span class="o">=</span> <span class="n">plotly</span><span class="o">.</span><span class="n">offline</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">output_type</span><span class="o">=</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span>
+<span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;_includes/plotly_example.html&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">plotly_example</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Example Ploty Graph</h3>
+<iframe width="800" height="600"
+  src="../static/plotly_example"
+></iframe>
+
+<h2><a href="https://github.com/features/actions">Github Actions</a></h2>
+<p>GitHub Actions are a way to automate workflows using a simple <a href="https://learnxinyminutes.com/docs/yaml/">YAML syntax</a>. It's free on public repositories.</p>
+<p>You must store workflow files in the <code>.github/workflows</code> directory of your repository.</p>
+<h3>Required</h3>
+<div class="highlight"><pre><span></span><code>name:
+</code></pre></div>
+
+<p>The name of your workflow. GitHub displays the names of your workflows on your repository's actions page.</p>
+<div class="highlight"><pre><span></span><code>on: [push, pull_request]
+</code></pre></div>
+
+<p>Required. The name of the GitHub event that triggers the workflow. For a list of available events, see <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows">Events that trigger workflows</a>.</p>
+<p>You can schedule a workflow to run at specific UTC times using POSIX cron syntax. Scheduled workflows run on the latest commit on the default or base branch.</p>
+<div class="highlight"><pre><span></span><code><span class="n">on</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">schedule</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="n">runs</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mi">00</span><span class="o">:</span><span class="mi">00</span><span class="w"> </span><span class="n">UTC</span><span class="w"> </span><span class="n">everyday</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">cron</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0 0 * * *&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>This example triggers the workflow every day at 00:00 UTC:</p>
+<h3>Jobs</h3>
+<p>A workflow run is made up of one or more jobs. Each job runs in a fresh instance of a virtual environment specified by <code>runs-on</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Virtual environment</th>
+<th>YAML workflow label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server 2019</td>
+<td><code>windows-latest</code> or <code>windows-2019</code></td>
+</tr>
+<tr>
+<td>Windows Server 2016</td>
+<td><code>windows-2016</code></td>
+</tr>
+<tr>
+<td>Ubuntu 20.04</td>
+<td><code>ubuntu-latest</code> or <code>ubuntu-20.04</code></td>
+</tr>
+<tr>
+<td>Ubuntu 18.04</td>
+<td><code>ubuntu-18.04</code></td>
+</tr>
+<tr>
+<td>macOS Big Sur 11</td>
+<td><code>macos-11</code></td>
+</tr>
+<tr>
+<td>macOS Catalina 10.15</td>
+<td><code>macos-latest</code> or <code>macos-10.15</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Steps</h3>
+<p><a href="https://github.com/actions/checkout">Checkout</a>: This action checks-out your repository so the workflow can access it.</p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="n">content</span><span class="w"></span>
+<span class="nl">uses</span><span class="p">:</span><span class="w"> </span><span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nv">@v2</span><span class="w"></span>
+</code></pre></div>
+
+<p><a href="https://github.com/actions/setup-python">Setup python</a>: This action sets up a Python environment for use in actions by installing and adding to PATH an available version of Python in this case python 3.8</p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">setup</span><span class="w"> </span><span class="n">python</span><span class="w"></span>
+<span class="nl">uses</span><span class="p">:</span><span class="w"> </span><span class="n">actions</span><span class="o">/</span><span class="n">setup</span><span class="o">-</span><span class="n">python</span><span class="nv">@v2</span><span class="w"></span>
+<span class="k">with</span><span class="err">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">python</span><span class="o">-</span><span class="nl">version</span><span class="p">:</span><span class="w"> </span><span class="mf">3.8</span><span class="w"></span>
+</code></pre></div>
+
+<p><a href="https://github.com/py-actions/py-dependency-install">Install dependancies</a>: This GitHub Action installs Python package dependencies from a user-defined <code>requirements.txt</code> file path with <code>pip</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">dependencies</span><span class="w"></span>
+<span class="nl">uses</span><span class="p">:</span><span class="w"> </span><span class="n">py</span><span class="o">-</span><span class="n">actions</span><span class="o">/</span><span class="n">py</span><span class="o">-</span><span class="n">dependency</span><span class="o">-</span><span class="n">install</span><span class="nv">@v2</span><span class="w"></span>
+<span class="k">with</span><span class="err">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">path</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;requirements.txt&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>In this case plotly, pandas, and pyYaml</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># requirements.txt</span>
+<span class="nv">plotly</span><span class="o">==</span><span class="m">4</span>.14.3
+<span class="nv">pandas</span><span class="o">==</span><span class="m">1</span>.1.3
+<span class="nv">pyyaml</span><span class="o">==</span><span class="m">5</span>.4.1
+</code></pre></div>
+
+<p>Runs command-line programs using the operating system's shell. run the run.py to get the latest data</p>
+<div class="highlight"><pre><span></span><code>- name: execute py script
+run: |
+    python run.py
+        dir
+</code></pre></div>
+
+<p>Commit changes to files</p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="k">Commit</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
+<span class="nl">id</span><span class="p">:</span><span class="w"> </span><span class="k">commit</span><span class="w"></span>
+<span class="nl">run</span><span class="p">:</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">--</span><span class="k">local</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">email</span><span class="w"> </span><span class="ss">&quot;action@github.com&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">--</span><span class="k">local</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="ss">&quot;github-actions&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="o">--</span><span class="ow">all</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="n">-z &quot;$(git status --porcelain)&quot;</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="ss">&quot;::set-output name=push::false&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">        </span><span class="n">git</span><span class="w"> </span><span class="k">commit</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="ss">&quot;Add changes&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="ss">&quot;::set-output name=push::true&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">fi</span><span class="w"></span>
+<span class="nl">shell</span><span class="p">:</span><span class="w"> </span><span class="n">bash</span><span class="w"></span>
+</code></pre></div>
+
+<p>Push changes to repo so github pages will re-build website</p>
+<div class="highlight"><pre><span></span><code><span class="x">- name: Push changes</span>
+<span class="x">if: steps.commit.outputs.push == &#39;true&#39;</span>
+<span class="x">uses: ad-m/github-push-action@master</span>
+<span class="x">with:</span>
+<span class="x">    github_token: </span><span class="cp">{{</span><span class="o">{</span> <span class="nv">secrets.GITHUB_TOKEN</span> <span class="cp">}}</span><span class="x">}</span>
+</code></pre></div>
+
+<h2>GitHub Pages</h2>
+<p><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">GitHub Pages</a> is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.</p>
+<p>You can use a static site generator to build your site for you or publish any static files that you push to your repository as follows:</p>
+<ol>
+<li>On GitHub, navigate to your site's repository, example: <a href="https://nhs-pycom.github.io/opensource-health-statistics/">https://nhs-pycom.github.io/opensource-health-statistics/</a>.</li>
+<li>In the root of the repository, create a new file called <code>index.md</code> that contains the content for your site.</li>
+<li>Under your repository name, select <code>Settings</code>.</li>
+<li>In the left sidebar, select <code>Pages</code>.</li>
+<li>Select the branch from which to publish your page and select <code>save</code>.</li>
+<li>Your page will be deployed within 60 seconds</li>
+<li>To see your published site, under <code>GitHub Pages</code>, select your site's URL.</li>
+</ol>
+<p>For the <a href="https://nhs-pycom.github.io/opensource-health-statistics/">Open Health Statistics</a> page we are using a static version of the <a href="https://service-manual.nhs.uk/">NHS Digital Service Manual</a> that meets the <a href="https://www.gov.uk/service-manual/service-standard">GOV.UK service standard</a>.</p>
+      </div><!-- /.entry-content -->
+    </section>
+  </main>
+</div>
+  <footer role="contentinfo">
+    <div class="nhsuk-footer" id="nhsuk-footer">
+        <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">Developed by <a class="nhsuk-footer__list-item-link" href="https://github.com/nhs-pycom">NHS-pycom</a></li>
+                <li class="nhsuk-footer__list-item">View the Project on <a class="nhsuk-footer__list-item-link" href="https://github.com/nhs-pycom/nhs.pycom">GitHub</a></li>
+            </ul>
+            <p class="nhsuk-footer__copyright">&copy; MIT Licence</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
